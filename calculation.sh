@@ -20,6 +20,10 @@ function calculate ()
             ;;
         "/")
             echo "division of "$operand_1" and "$operand_2
+            if [[ $operand_2 -eq "0" ]]; then
+                echo "Division by 0"
+                exit 128
+            fi
             power_of_ten=$(( $power_of_ten + 1 ))
             multiplier=$(( 10**$power_of_ten ))
             result=$(( multiplier*significand_first / significand_second ))
